@@ -113,7 +113,7 @@ else { // set defaults
         if(isset($calc)) {
             $GLOBALS['error']
                 ? print "<br><div style='color: red'>".$GLOBALS['error']."</div>"
-  		        : print "<p> $x". $_POST['operator'] ." $y = $prod</p>";
+  		            : print "<p> $x". $_POST['operator'] ." $y = $prod</p>";
         }
         ?>
 
