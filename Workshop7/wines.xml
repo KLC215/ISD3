@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wines>
+    <category name="Red">
+        <product>
+            <title>Preference Cutes de Rhune Rouge</title>
+            <desc>This Caves Saint Pierre Prèference Cùtes du Rhùne is an easy drinking and spicy red wine laden with
+                summer fruit flavours.
+            </desc>
+            <price>3.99</price>
+            <image>crr.jpg</image>
+        </product>
+    </category>
+    <category name="Rose">
+        <product>
+            <title>Mateus Rose</title>
+            <desc>An all time favourite.</desc>
+            <price>3.99</price>
+            <image>mro.jpg</image>
+        </product>
+        <product>
+            <title>Blossom Hill White Grenache Rose</title>
+            <desc>Aromas of red berry, cherry and white pepper. Lush on the palate with lots of berries. Citrus and
+                honeysuckle notes.
+            </desc>
+            <price>3.99</price>
+            <image>bhro.jpg</image>
+        </product>
+    </category>
+</wines>

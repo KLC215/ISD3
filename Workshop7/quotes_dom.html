@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table id="quotes">
+
+</table>
+
+<script>
+    var xml = new XMLHttpRequest();
+    xml.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            retrieveXML(this);
+        }
+    };
+    xml.open("GET", "quotes.xml", true);
+    xml.send();
+
+    function retrieveXML(xml) {
+        var xmlDoc = xml.responseXML;
+
+        console.log(xmlDoc);
+
+        for (var i = 0; i < xmlDoc.childNodes.length; i++) {
+            var category = xmlDoc.getElementsByTagName("quote")[i].getAttribute("category");
+            var text = xmlDoc.getElementsByTagName("text")[i].childNodes[0].nodeValue;
+            var name = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
+            var dob = xmlDoc.getElementsByTagName("dob")[i].childNodes[0].nodeValue;
+            var dod = xmlDoc.getElementsByTagName("dod")[i].hasChildNodes().nodeValue;
+            var url = xmlDoc.getElementsByTagName("url")[i].childNodes[0].nodeValue;
+            var img = xmlDoc.getElementsByTagName("img")[i].childNodes[0].nodeValue;
+
+            var quotes = document.getElementById("quotes");
+            quotes.innerHTML =
+                    "<tr>" +
+                    "<td>Category</td>" +
+                    "<td>" + category + "</td>" +
+                    "</tr>" +
+                    "<tr>" +
+                    "<td>Quote</td>" +
+                    "<td>" + text + "</td>" +
+                    "</tr>" +
+                    "<tr>" +
+                    "<td>Author</td>" +
+                    "<td><a href='" + url + "'>" + name + "</a></td>" +
+                    "</tr>" +
+                    "<tr>" +
+                    "<td>Date</td>" +
+                    "<td>" + (dod != null ? dob + " - " + dod : dob) + "</td>" +
+                    "</tr>" +
+                    "<tr>" +
+                    "<td>Image</td>" +
+                    "<td><img src='" + img + "' height='200' width='200'></td>" +
+                    "</tr><br>";
+
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
